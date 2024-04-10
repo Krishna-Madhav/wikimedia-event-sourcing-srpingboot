@@ -31,7 +31,7 @@ public class WikimediaChangesProducer {
 
         EventHandler eventHandler = new WikimediaChangesHandler(kafkaTemplate, topicName);
 
-        // Event Source connects to source i.e wikimedia
+        // Event Source connects to source i.e. wikimedia
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";
         EventSource eventSource = new EventSource.Builder(eventHandler, URI.create(url)).build();
 

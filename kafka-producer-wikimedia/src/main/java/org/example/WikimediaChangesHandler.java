@@ -36,7 +36,6 @@ public class WikimediaChangesHandler implements EventHandler {
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
 
         LOGGER.info(String.format("event data ----> %s", messageEvent.getData()));
-
         kafkaTemplate.send(topic, messageEvent.getData());
     }
 
